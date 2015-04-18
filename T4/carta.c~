@@ -29,7 +29,7 @@ carta carta_cria(valor v, naipe n){
 }
 
 /* destrói a carta c */
-void carta_destroi(carta c){	
+void carta_destroi(carta c){
 	memo_libera(c);
 }
 

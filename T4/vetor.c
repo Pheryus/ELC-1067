@@ -79,7 +79,6 @@ void vetor_insere_carta(vetor_t *vet, int indice, carta c)
 	for (i = vet->n - 1; i > indice; i--)
 		vet->baralho[i] = vet->baralho[i - 1];
 	vet->baralho[indice] = c;
-	carta_abre(vet->baralho[indice]);
 }
 
 carta vetor_remove_carta(vetor_t *vet, int indice)

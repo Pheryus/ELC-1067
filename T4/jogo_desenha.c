@@ -7,7 +7,6 @@
 
 #include "jogo.h"
 #include "tela.h"
-
 #include <assert.h>
 
 void jogo_desenha_linhas(jogo sol, posicao pos, char *l[])

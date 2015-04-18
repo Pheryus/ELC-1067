@@ -10,14 +10,11 @@ e uma aberta na segunda, duas fechadas e uma aberta na terceira, etc. O
 restante das cartas, fechadas, devem estar no monte. As demais pilhas
 (descartes e ases) devem estar vazias.
 A cada jogada, o jogador pode:
-- abrir uma carta do monte sobre o descarte
-- virar todas as cartas do descarte no monte vazio
+
 - mover uma carta aberta (dos descartes ou de alguma pilha) para uma das
   pilhas ases (deve ser do mesmo naipe e com valor imediatamente superior ao
   da carta que já se encontra nessa pilha de ases, ou ser um as colocado em
   uma pilha vazia)
-- mover todas as cartas abertas de uma das 7 pilhas para outra.
-- mover a carta no topo dos descartes para uma das 7 pilhas.
 - terminar o jogo.
 
 Uma carta só pode ser movida sobre outra em uma das pilhas se for de naipe

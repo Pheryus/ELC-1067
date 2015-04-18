@@ -60,7 +60,6 @@ void vetor_destroi(vetor_t* vet)
 	/* TODO aqui */
 	memo_libera(vet->baralho);
 	memo_libera(vet);	
-	printf ("teste2\n");
 }
 
 int vetor_numelem(vetor_t *vet)

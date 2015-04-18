@@ -1,60 +1,34 @@
 /*
  * tela.c
  * Funções de tela com ncurses.
- *
- * The MIT License (MIT)
- * 
- * Copyright (c) 2014, 2015 João V. Lima, UFSM
- *               2005       Benhur Stein, UFSM
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
  */
 
-#include "tela.h"
-#include "memo.h"
 
 #include <string.h>
 #include <stdlib.h>
 #include <assert.h>
 
+#include "tela.h"
+#include "memo.h"
+
 #define TELA_MAGICO 0x7E7A
 #define DESTRUIDO 0x80000000
 
-__attribute__ ((unused)) static void tela_resumo(void)
-{
+__attribute__ ((unused)) static void tela_resumo(void){
 }
 
-bool tela_valida(tela t)
-{
+bool tela_valida(tela t){
     return t != NULL && t->magico == TELA_MAGICO;
 }
 
-static void tela_atualiza_tamanho(tela t)
-{
+static void tela_atualiza_tamanho(tela t){
     assert(tela_valida(t));
     getmaxyx(stdscr, t->tam_tela.alt, t->tam_tela.larg);
 }
 
-tela tela_cria(void)
-{
+tela tela_cria(void){
     tela t;
-    
+
     assert((t = (tela)memo_aloca(sizeof(tela_t))) != NULL);
     t->magico = TELA_MAGICO;
 
@@ -75,8 +49,7 @@ tela tela_cria(void)
 }
 
 
-void tela_destroi(tela t)
-{
+void tela_destroi(tela t){
     assert(tela_valida(t));
     clear();
     refresh();
@@ -84,36 +57,31 @@ void tela_destroi(tela t)
     memo_libera(t);
 }
 
-void tela_limpa(tela t)
-{
+void tela_limpa(tela t){
     assert(tela_valida(t));
     erase();
 }
 
-void tela_posiciona(tela t, posicao pos)
-{
+void tela_posiciona(tela t, posicao pos){
     assert(tela_valida(t));
     assert(pos.y < t->tam_tela.alt && pos.y >= 0);
     assert(pos.x < t->tam_tela.larg || pos.x >= 0);
     move(pos.y, pos.x);
 }
 
-void tela_muda_cor(tela t, cor c)
-{
+void tela_muda_cor(tela t, cor c){
     assert(tela_valida(t));
     attrset(COLOR_PAIR(c));
 }
 
-void tela_escreve(tela t, char *str)
-{
+void tela_escreve(tela t, char *str){
     assert(tela_valida(t));
     addstr(str);
 }
 
-static int limita_larg(tela t, int larg)
-{
+static int limita_larg(tela t, int larg){
     int x, y, e;
-    
+
     assert(tela_valida(t));
     getyx(stdscr, y, x);
     e = t->tam_tela.larg - x;
@@ -122,8 +90,7 @@ static int limita_larg(tela t, int larg)
     return larg;
 }
 
-static void strfill(char *s, char c, int l)
-{
+static void strfill(char *s, char c, int l){
     int i;
     for (i=0; i<l; i++) *s++ = c;
     *s = '\0';
@@ -138,7 +105,7 @@ void tela_escreve_limitado(tela t, char *str, int ini, int larg)
 {
     char s[larg+1];
     int l;
-    
+
     assert(tela_valida(t));
     strfill(s, ' ', larg);
 
@@ -156,7 +123,7 @@ void tela_escreve_centralizado(tela t, char *str, int larg)
 
     l = larg - strlen(str);
     l = l / 2;
-    
+
     tela_escreve_limitado(t, str, l, larg);
 }
 

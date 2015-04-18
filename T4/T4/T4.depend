@@ -1,0 +1,195 @@
+# depslib dependency file v1.0
+1427825166 source:c:\users\brenda\documents\github\elc1067\t4\carta.c
+	<stdio.h>
+	<stdlib.h>
+	"carta.h"
+	"memo.h"
+
+1427825166 c:\users\brenda\documents\github\elc1067\t4\carta.h
+	<stdlib.h>
+	<stdbool.h>
+
+1427825166 c:\users\brenda\documents\github\elc1067\t4\memo.h
+
+1427825166 source:c:\users\brenda\documents\github\elc1067\t4\fila.c
+	<stdio.h>
+	<stdlib.h>
+	<assert.h>
+	"memo.h"
+	"fila.h"
+	"vetor.h"
+
+1427825166 c:\users\brenda\documents\github\elc1067\t4\fila.h
+	<stdbool.h>
+	"carta.h"
+
+1427378539 c:\users\brenda\documents\github\elc1067\t4\vetor.h
+	<stdbool.h>
+	"carta.h"
+
+1428428853 source:/home/alunos/bsantana/Área de Trabalho/T4/carta.c
+	<stdio.h>
+	<stdlib.h>
+	"carta.h"
+	"memo.h"
+
+1428428560 /home/alunos/bsantana/Área de Trabalho/T4/carta.h
+	<stdlib.h>
+	<stdbool.h>
+
+1428600827 /home/alunos/bsantana/Área de Trabalho/T4/memo.h
+
+1428427893 source:/home/alunos/bsantana/Área de Trabalho/T4/fila.c
+	<stdio.h>
+	<stdlib.h>
+	<assert.h>
+	"memo.h"
+	"fila.h"
+	"vetor.h"
+
+1427985638 /home/alunos/bsantana/Área de Trabalho/T4/fila.h
+	<stdbool.h>
+	"carta.h"
+
+1427985638 /home/alunos/bsantana/Área de Trabalho/T4/vetor.h
+	<stdbool.h>
+	"carta.h"
+
+1428600858 source:/home/alunos/bsantana/Área de Trabalho/T4/jogo.c
+	<assert.h>
+	"jogo.h"
+	"memo.h"
+
+1428428556 /home/alunos/bsantana/Área de Trabalho/T4/jogo.h
+	"carta.h"
+	"pilha.h"
+	"tela.h"
+
+1428428548 /home/alunos/bsantana/Área de Trabalho/T4/pilha.h
+	<stdbool.h>
+	"carta.h"
+
+1428428042 /home/alunos/bsantana/Área de Trabalho/T4/tela.h
+	<ncurses.h>
+
+1427985638 source:/home/alunos/bsantana/Área de Trabalho/T4/jogo_desenha.c
+	"jogo.h"
+	"tela.h"
+	<assert.h>
+
+1428599157 source:/home/alunos/bsantana/Área de Trabalho/T4/memo.c
+	<stdio.h>
+	<stdlib.h>
+
+1428599414 source:/home/alunos/bsantana/Área de Trabalho/T4/pilha.c
+	<stdio.h>
+	<stdlib.h>
+	"fila.h"
+	"pilha.h"
+
+1428602405 source:/home/alunos/bsantana/Área de Trabalho/T4/principal.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"memo.h"
+	"jogo.h"
+	"vetor.h"
+
+1427985638 source:/home/alunos/bsantana/Área de Trabalho/T4/vetor.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	"vetor.h"
+	"carta.h"
+	"memo.h"
+
+1428429076 source:/home/alunos/bsantana/Área de Trabalho/T4/tela.c
+	<string.h>
+	<stdlib.h>
+	<assert.h>
+	"tela.h"
+	"memo.h"
+
+1429032397 source:/home/alunos/bsantana/Área de Trabalho/T4.1/carta.c
+	<stdio.h>
+	<stdlib.h>
+	"carta.h"
+	"memo.h"
+
+1428428560 /home/alunos/bsantana/Área de Trabalho/T4.1/carta.h
+	<stdlib.h>
+	<stdbool.h>
+
+1428600827 /home/alunos/bsantana/Área de Trabalho/T4.1/memo.h
+
+1429203943 source:/home/alunos/bsantana/Área de Trabalho/T4.1/fila.c
+	<stdio.h>
+	<stdlib.h>
+	<assert.h>
+	"memo.h"
+	"fila.h"
+	"vetor.h"
+
+1427985638 /home/alunos/bsantana/Área de Trabalho/T4.1/fila.h
+	<stdbool.h>
+	"carta.h"
+
+1427985638 /home/alunos/bsantana/Área de Trabalho/T4.1/vetor.h
+	<stdbool.h>
+	"carta.h"
+
+1429030739 source:/home/alunos/bsantana/Área de Trabalho/T4.1/jogo.c
+	<assert.h>
+	"jogo.h"
+	"memo.h"
+
+1428428556 /home/alunos/bsantana/Área de Trabalho/T4.1/jogo.h
+	"carta.h"
+	"pilha.h"
+	"tela.h"
+
+1428428548 /home/alunos/bsantana/Área de Trabalho/T4.1/pilha.h
+	<stdbool.h>
+	"carta.h"
+
+1428428042 /home/alunos/bsantana/Área de Trabalho/T4.1/tela.h
+	<ncurses.h>
+
+1427985638 source:/home/alunos/bsantana/Área de Trabalho/T4.1/jogo_desenha.c
+	"jogo.h"
+	"tela.h"
+	<assert.h>
+
+1428599157 source:/home/alunos/bsantana/Área de Trabalho/T4.1/memo.c
+	<stdio.h>
+	<stdlib.h>
+
+1428599414 source:/home/alunos/bsantana/Área de Trabalho/T4.1/pilha.c
+	<stdio.h>
+	<stdlib.h>
+	"fila.h"
+	"pilha.h"
+
+1428429076 source:/home/alunos/bsantana/Área de Trabalho/T4.1/tela.c
+	<string.h>
+	<stdlib.h>
+	<assert.h>
+	"tela.h"
+	"memo.h"
+
+1429032781 source:/home/alunos/bsantana/Área de Trabalho/T4.1/vetor.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	"vetor.h"
+	"carta.h"
+	"memo.h"
+
+1429207811 source:/home/alunos/bsantana/Área de Trabalho/T4.1/principal.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"memo.h"
+	"jogo.h"
+	"vetor.h"
+
