@@ -37,7 +37,7 @@
 int main(int argc, char **argv)
 {
 	/* exemplo simples de árvore */
-	arv_t* operando, *operador, *aux;	
+	arv_t* operando, *operador;
 	op_t soma, n1, n2;
 	pilha_t* pilha;
 	pilha = pilha_cria();
@@ -45,6 +45,7 @@ int main(int argc, char **argv)
 	char expressao[100];
 	char* token; 
 	int indice=0;
+	
 	printf ("Informe expressao:");  
 	gets(expressao);
 	token = strtok(expressao," ");
@@ -53,7 +54,7 @@ int main(int argc, char **argv)
 			  n1.tipo = OPERANDO;
 			  n1.u.operando = atof(token);
 			  operando = arv_cria(n1);
-			  pilha_insere(pilha,operando);
+			  pilha_insere(pilha,operando);	  
 		  }
 		  else {
 			  soma.tipo = OPERADOR;
@@ -67,7 +68,7 @@ int main(int argc, char **argv)
 				soma.u.operador = '/';
 			  if (pilha_valida(pilha)){
 				operador = arv_cria(soma);
-				 aux = pilha_remove(pilha);
+				arv_t* aux = pilha_remove(pilha);
 				operador = arv_insere_direita(operador,aux);
 				aux = pilha_remove(pilha);
 				operador = arv_insere_esquerda(operador,aux);
@@ -79,15 +80,14 @@ int main(int argc, char **argv)
 	  
 	}
 	
-	printf ("printar arvore pos ordem\n");
-	arv_imprime_pos_ordem(pilha->topo->arv);
-	printf ("\n");
-	printf ("printar arvore em ordem\n");
+	printf ("-Printar arvore-\n");
 	arv_imprime_em_ordem(pilha->topo->arv);
 	printf ("\n");
+	double result;
+	result = calcula(pilha->topo->arv);
+	printf ("Resultado: %.2f\n",result);
 	arv_destroi(pilha->topo->arv);
 	pilha_destroi( pilha );
-	memo_relatorio();
 	return 0;
 	
 }

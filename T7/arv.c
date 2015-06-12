@@ -18,6 +18,27 @@ arv_t* arv_insere_esquerda(arv_t* arv, arv_t* op){
 	
 }
 
+double calcula (arv_t* arv){
+	double valor1, valor2;
+	if (arv->dado.tipo == OPERANDO){
+	      return arv->dado.u.operando;
+	}
+	else if (arv->dado.tipo == OPERADOR){
+	      valor1 = calcula(arv->esq);
+	      valor2 = calcula(arv->dir);
+	      if (arv->dado.u.operador == '+'){
+		      return valor2 + valor1;
+	      }
+	      else if (arv->dado.u.operador == '-')
+		      return valor2 - valor1;
+	      else if (arv->dado.u.operador == '*')
+		      return valor1 * valor2;
+	      else if (arv->dado.u.operador == '/')
+		      return valor2/valor1;
+	}
+  
+}	
+
 /* insere um novo dado na árvore a direita */
 arv_t* arv_insere_direita(arv_t* arv, arv_t* op){
   
@@ -30,11 +51,11 @@ void arv_imprime_pre_ordem(arv_t* arv){
 	if (arv == NULL)
 		return;
 	if (arv->dado.tipo == OPERADOR){
-		printf ("%c\n",arv->dado.u.operador);
+		printf ("%c ",arv->dado.u.operador);
 	}
 	else{
 	      
-		printf ("%f\n",arv->dado.u.operando);
+		printf ("%.2f ",arv->dado.u.operando);
 	}
 	arv_imprime_pre_ordem(arv->esq);
 	arv_imprime_pre_ordem(arv->dir);
@@ -46,7 +67,6 @@ void arv_imprime_em_ordem(arv_t* arv){
   
 	if (arv == NULL)
 		return;
-	printf ("(");
 	arv_imprime_em_ordem(arv->esq);
 	if (arv->dado.tipo == OPERADOR){
 		printf ("%c ",arv->dado.u.operador);
@@ -56,7 +76,6 @@ void arv_imprime_em_ordem(arv_t* arv){
 		printf ("%.2f ",arv->dado.u.operando);
 	}
 	arv_imprime_em_ordem(arv->dir);	
-	printf (")");
 }
 
 /* imprime a árvore em pós-ordem: esquerda, direita, e raiz */
@@ -64,7 +83,7 @@ void arv_imprime_pos_ordem(arv_t* arv){
  
 	if (arv == NULL)
 		return;
-	arv_imprime_pos_ordem(arv->esq);
+	arv_imprime_pos_ordem(arv->esq);	
 	arv_imprime_pos_ordem(arv->dir);
 	if (arv->dado.tipo == OPERADOR){
 		printf ("%c ",arv->dado.u.operador);

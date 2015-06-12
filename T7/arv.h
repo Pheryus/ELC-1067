@@ -68,6 +68,8 @@ void arv_imprime_em_ordem(arv_t* arv);
 /* imprime a árvore em pós-ordem: esquerda, direita, e raiz */
 void arv_imprime_pos_ordem(arv_t* arv);
 
+double calcula (arv_t* arv);
+
 /*  destroi toda a árvore */
 arv_t* arv_destroi(arv_t* arv);
 
