@@ -14,28 +14,11 @@ lista_t* lista_insere(lista_t* l, struct vertice_t* v){
 	  return aux;
 }
 
-void printa_lista(lista_t* l){
-      vertice_t* v;
-      lista_t* aux = l;
-      while (aux != NULL){
-	v = aux->vertice;
-	printf ("Palavra:%s\n",v->nome);
-	aux = aux->prox;
-      }	
+void lista_remove(lista_t* l){
   
-}
-
-void printa_adj(lista_t* l){
-  
-      vertice_t* v;
-      lista_t* aux = l;
-      while (aux != NULL){
-	
-	    
-	
-	
-      }
-  
-  
-  
+	  if (l != NULL){
+		  lista_remove(l->prox);
+		  memo_libera(l);
+    
+	  }
 }

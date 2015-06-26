@@ -15,6 +15,6 @@ typedef struct lista {
 
 lista_t* lista_cria();
 lista_t* lista_insere(lista_t* l,struct vertice_t* v);
-
+void lista_remove(lista_t* l);
 
 #endif

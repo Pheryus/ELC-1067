@@ -45,6 +45,7 @@ int main (int argc, char **argv){
 			loop--;
 		 }
 		 loop = arestas;
+		 
 		 while(loop){
 			fscanf(f,"%s %s", aux,aux2);
 			printf ("inserindo aresta %s com %s\n",aux,aux2);
@@ -53,5 +54,7 @@ int main (int argc, char **argv){
 		 }
 	}
 	grafo_imprime(g);
+	grafo_destroi(g);
+	memo_relatorio();
   
 }

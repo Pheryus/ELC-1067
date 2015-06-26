@@ -39,5 +39,6 @@ typedef struct vertice {
 
 vertice_t* vcria(vertice_t* v, char* ch, char* no);
 vertice_t* vinicializa ();
+void vlibera(vertice_t* v);
 
 #endif /* _VERTICE_H_ */

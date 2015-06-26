@@ -22,3 +22,11 @@ vertice_t* vcria(vertice_t* v, char* ch, char* no){
       v->adjacentes = NULL;
       return v;
 }
+
+void vlibera(vertice_t* v){
+	  
+      memo_libera(v->nome);
+      memo_libera(v->chave);	
+      memo_libera(v);
+      
+}
